@@ -1,1 +1,19 @@
 这个文件夹是上传经过验证的模运算操作 .v文件以及相关的tb
+通过功能性验证 但未经过Vivado综合测试
+0. 公共文件
+  csa_cell.v (一位的CSA加法器，可以通过参数设置成多位)
+1. 模加操作
+  设计文件: mod_add.v
+  测试文件: tb_mod_add_top.v
+2. 模减操作
+  设计文件: mod_sub.v
+  测试文件: tb_mod_sub_top.v
+3. 模逆操作
+  设计文件: mod_inv.v
+  测试文件: tb_mod_inv_top.v
+  仿真对照文件: tb_mod_inv_test.v (以testbench的方式描述拓展欧几里得算法，为debug给出对照，不可综合)
+  (备注: 如需测试 请添加 cas_cell.v 文件。)
+4. 快速模约操作
+  设计文件: SM2_FastReduction_top.v
+  测试文件: tb_sm2_FastReduction_top.v
+  (备注: 如需测试 请添加 csa_cell.v 文件。目前实现为单周期版本，后期会考虑做成 2级流水以及加入模加功能)
